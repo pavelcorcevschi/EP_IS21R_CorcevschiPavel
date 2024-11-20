@@ -1,0 +1,225 @@
+:root {
+    --background-image: url(../images/background/background.png);
+    --buttons-color: #25975A;
+    --buttons-active-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+    background: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
+.wrapper {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 100vh;
+}
+.setting_menu {
+    width: 460px;
+    height: 100%;
+    border: 1px solid white;
+}
+.orar_menu {
+    width: 750px;
+    height: 100%;
+    border: 1px solid white;
+}
+.title_setting-menu {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 50px;
+    background: #f8f8f8;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title_setting-menu h4 {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+.setting_menu-header nav {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.setting_menu-header nav .nav_button {
+    border: none;
+    padding: 5px 25px;
+    font-size: 16px;
+    background: var(--buttons-color);
+    color: white;
+    cursor: pointer;
+}
+.setting_menu-header nav .nav_button.active {
+    background: var(--buttons-active-color);
+    color: black;
+}
+.mode {
+    color: white;
+    width: 100%;
+    height: 30px;
+    margin: 20px 0;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-end;
+}
+.mode label {
+    height: 100%;
+    width: 70px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.15s ease;
+    margin-left: 10px;
+}
+.mode label input {
+    display: none;
+    height: 100%;
+}
+.mode label .slider {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    padding: 2px;
+    background: #ccc;
+    transition: all 0.15s ease;
+
+}
+.mode label .slider::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    position: absolute;
+    left: 2px;
+    transition: all 0.15s ease;
+
+}
+.setting_menu-search {
+    width: 100%;
+}
+.search {
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+.search img {
+    margin-left: 5px;
+}
+.search input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 8px;
+    background: none;
+    font-size: 16px;
+}
+.search_result {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    margin-top: 20px;
+    overflow: hidden;
+}
+.search_result .item_search {
+    width: 100%;
+    height: 25px;
+    padding: 0 15px;
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+select {
+    max-width: 100%;
+    width: 100%;
+    border: 0 none;
+    padding: 0 10px;
+    height: 40px;
+    margin-top: 20px;
+    background: #fff;
+    color: #666;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #e5e5e5;
+    transition: .2s ease-in-out;
+    transition-property: color, background-color, border;
+}
+.container_result-orar {
+    display: grid;
+    grid-template-columns: 1fr 3.5fr; 
+    grid-template-rows: 1fr; 
+    grid-template-areas: 
+    "days days"
+    "days_letter grid_orar";   
+    background: white;
+    margin-top: 20px;
+}
+.days {
+    grid-area: days;
+    width: 100%;
+    background: #25975A;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.days_item {
+    color: white;
+    border-left: none;
+    text-align: center;
+}
+.days_letter {
+    grid-area: days_letter;
+    display: grid;
+    background: #25975A;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.days_letter-item {
+    color: white;
+    padding: 1px 0;
+    text-align: center;
+}
+.grid_orar {
+    grid-area: grid_orar;
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+}
+.grid_orar .row_orar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+.row_orar-item {
+    width: 100%;
+    height: 100%;
+    border: 1px solid gray;
+    border-left: 0;
+    border-top: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.row_orar-item.seminar {
+    background: rgb(255, 83, 83);
+}
+.row_orar-item.laborator {
+    background: rgb(124, 255, 63);
+}
+.row_orar-item.prelegeri {
+    background: rgb(189, 190, 255);
+}
